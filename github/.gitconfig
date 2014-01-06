@@ -1,0 +1,7 @@
+[user]
+	email = richard@skimlinks.com
+	name = Richard Johnson
+[push]
+	default = simple
+[color]
+	ui = true
