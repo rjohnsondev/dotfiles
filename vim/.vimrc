@@ -68,6 +68,8 @@ filetype indent plugin on
 set mouse=a
 set ttymouse=xterm2
 
+execute pathogen#infect()
+
 "let &t_Co=256
 if has("gui_running")
     colorscheme github
@@ -86,7 +88,6 @@ autocmd FileType python compiler pylint
 let g:golang_goroot = "/home/richard/go/"
 set linespace=1
 
-
 let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-5.6/checkstyle-5.6-all.jar"
 let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-5.6/sun_checks.xml"
 let g:syntastic_java_checkers=['checkstyle']
@@ -94,4 +95,3 @@ let g:syntastic_java_checkers=['pylint']
 
 let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 
-execute pathogen#infect()
