@@ -31,12 +31,11 @@ ZSH_THEME="rjohnsondev"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
-REPORTTIME=10
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
@@ -52,17 +51,22 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export REPORTTIME=10
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 bindkey -M vicmd '?' history-incremental-search-backward
+bindkey '^r' history-incremental-search-backward
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
-
-bindkey -M vicmd '?' history-incremental-search-backward
+export PATH=$PATH:/home/richard/apache-maven-3.1.0/bin
 
 if [ "$TERM" = "xterm" ]; then
     TERM='xterm-256color'
 fi
 
+alias alfred='mysql -urichard -p -h alfred -A mugic'
+alias redshift='psql -h wh.clb7jg0ed4iz.us-east-1.redshift.amazonaws.com -p 5439 -d wh'
+
+export KEYTIMEOUT=1
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
