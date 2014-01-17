@@ -64,6 +64,7 @@ if [ "$TERM" = "xterm" ]; then
 fi
 
 alias alfred='mysql -urichard -p -h alfred -A mugic'
+alias batman='mysql -urichard -p -h batman -A mugic'
 alias redshift='psql -h wh.clb7jg0ed4iz.us-east-1.redshift.amazonaws.com -p 5439 -d wh'
 
 export KEYTIMEOUT=1
