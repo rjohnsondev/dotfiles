@@ -83,7 +83,7 @@ set guifont=Consolas
 
 
 "autocmd FileType go compiler golang
-autocmd FileType python compiler pylint
+"autocmd FileType python compiler pylint
 
 let g:golang_goroot = "/home/richard/go/"
 set linespace=1
@@ -91,7 +91,7 @@ set linespace=1
 let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-5.6/checkstyle-5.6-all.jar"
 let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-5.6/sun_checks.xml"
 let g:syntastic_java_checkers=['checkstyle']
-let g:syntastic_java_checkers=['pylint']
+let g:syntastic_python_checkers=['flake8']
 
 let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 
