@@ -95,3 +95,7 @@ let g:syntastic_python_checkers=['flake8']
 
 let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
