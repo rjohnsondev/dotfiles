@@ -58,7 +58,7 @@ bindkey '^r' history-incremental-search-backward
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/home/richard/bin
-export PATH=$PATH:/home/richard/apache-maven-3.1.1/bin
+export PATH=$PATH:/home/richard/apache-maven-3.2.1/bin
 
 if [ "$TERM" = "xterm" ]; then
     TERM='xterm-256color'
