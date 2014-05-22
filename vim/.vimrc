@@ -50,7 +50,7 @@ map <C-t> :tabnew<CR>
 " map <C-e> :tabnew<CR>:NERDTree<CR>
 map <C-e> :NERDTreeToggle<CR>
 map <C-space> :CommandT<CR>
-vmap <Enter> :Eval<CR>
+vmap <ENTER> :Eval<CR>
 
 
 set guioptions-=T
@@ -86,6 +86,7 @@ set guifont=Consolas
 "autocmd FileType go compiler golang
 "autocmd FileType python compiler pylint
 
+"let g:golang_goroot = "/home/richard/go/"
 let g:golang_goroot = "/home/richard/go/"
 set linespace=1
 
