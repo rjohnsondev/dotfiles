@@ -50,6 +50,7 @@ map <C-t> :tabnew<CR>
 " map <C-e> :tabnew<CR>:NERDTree<CR>
 map <C-e> :NERDTreeToggle<CR>
 map <C-space> :CommandT<CR>
+vmap <Enter> :Eval<CR>
 
 
 set guioptions-=T
