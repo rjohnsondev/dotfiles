@@ -59,6 +59,8 @@ export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:/home/richard/bin
 export PATH=$PATH:/home/richard/apache-maven-3.2.1/bin
+export PATH="/usr/share/elasticsearch/bin:$PATH"
+export PATH=$HOME/.rbenv/bin:$PATH
 
 if [ "$TERM" = "xterm" ]; then
     TERM='xterm-256color'
@@ -69,6 +71,10 @@ alias batman='mysql -urichard -p -h batman -A mugic'
 alias redshift='psql -h wh.clb7jg0ed4iz.us-east-1.redshift.amazonaws.com -p 5439 -d wh'
 
 export KEYTIMEOUT=1
+
+eval "$(rbenv init -)"
+export PATH="./.bundle/bin:$PATH"
+alias bi="bundle install --jobs 4 --binstubs .bundle/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
