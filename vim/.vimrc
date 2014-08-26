@@ -89,8 +89,8 @@ set guifont=Consolas
 let g:golang_goroot = "/home/richard/go/"
 set linespace=1
 
-let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-5.6/checkstyle-5.6-all.jar"
-let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-5.6/sun_checks.xml"
+let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-5.7/checkstyle-5.7-all.jar"
+let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-5.7/sun_checks.xml"
 let g:syntastic_java_checkers=['checkstyle']
 let g:syntastic_python_checkers=['flake8']
 
