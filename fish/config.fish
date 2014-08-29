@@ -14,3 +14,6 @@ set fish_plugins vi-mode python autojump
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
+
+. ~/virtualfish/virtual.fish
+. ~/virtualfish/auto_activation.fish
