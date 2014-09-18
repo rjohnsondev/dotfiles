@@ -23,3 +23,9 @@ set fish_greeting ""
 
 . ~/virtualfish/virtual.fish
 . ~/virtualfish/auto_activation.fish
+
+set PATH ~/.rbenv/bin $PATH
+set -gx RBENV_ROOT ~/.rbenv
+. (rbenv init -|psub)
+
+test -s /home/richard/.nvm-fish/nvm.fish; and source /home/richard/.nvm-fish/nvm.fish
