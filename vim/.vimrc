@@ -73,7 +73,8 @@ execute pathogen#infect()
 
 "let &t_Co=256
 if has("gui_running")
-    colorscheme github
+    "colorscheme github
+    colorscheme desertEx
 endif
 
 " for filename completion
@@ -90,8 +91,8 @@ set guifont=Consolas
 let g:golang_goroot = "/home/richard/go/"
 set linespace=1
 
-let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-5.7/checkstyle-5.7-all.jar"
-let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-5.7/sun_checks.xml"
+let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.0/checkstyle-6.0-all.jar"
+let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-6.0/sun_checks.xml"
 let g:syntastic_java_checkers=['checkstyle']
 let g:syntastic_python_checkers=['flake8']
 

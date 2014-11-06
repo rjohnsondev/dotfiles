@@ -15,6 +15,19 @@ set fish_plugins vi-mode python autojump
 alias leaddb="mysql -uleadgen -h54.195.186.183 leadgen"
 alias alfred="mysql -urichard -halfred.skimlinks.com -p mugic"
 alias batman="mysql -urichard -hbatman.skimlinks.com -p mugic"
+alias redshift="psql -Uwhmaster -p5439 -hwh.clb7jg0ed4iz.us-east-1.redshift.amazonaws.com -dwh"
+
+function lp
+    set c 'lpass ls | '
+    for x in $argv
+        set c "$c grep -i '$x' | "
+    end
+    set c "$c sed -n 's/.*\[id: \([0-9]*\)\].*/\1/p'"
+    set vals (eval $c)
+    for v in $vals
+        lpass show $v
+    end
+end
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
@@ -25,6 +38,10 @@ set fish_greeting ""
 . ~/virtualfish/auto_activation.fish
 
 set PATH ~/.rbenv/bin $PATH
+set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/tools $PATH
+set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/platform-tools $PATH
+set PATH ~/apache-maven-3.2.3/bin $PATH
+set ANDROID_HOME /home/richard/adt-bundle-linux-x86_64-20140702/sdk
 set -gx RBENV_ROOT ~/.rbenv
 . (rbenv init -|psub)
 
