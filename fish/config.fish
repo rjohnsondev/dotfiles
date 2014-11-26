@@ -12,7 +12,7 @@ set fish_plugins vi-mode python autojump
 # Path to your custom folder (default path is $FISH/custom)
 #set fish_custom $HOME/dotfiles/oh-my-fish
 #
-alias leaddb="mysql -uleadgen -h54.195.186.183 leadgen"
+alias leaddb="mysql -urichard -hleadsdb.skimlinks.com leadgen"
 alias alfred="mysql -urichard -halfred.skimlinks.com -p mugic"
 alias batman="mysql -urichard -hbatman.skimlinks.com -p mugic"
 alias redshift="psql -Uwhmaster -p5439 -hwh.clb7jg0ed4iz.us-east-1.redshift.amazonaws.com -dwh"
@@ -38,9 +38,12 @@ set fish_greeting ""
 . ~/virtualfish/auto_activation.fish
 
 set PATH ~/.rbenv/bin $PATH
+set PATH ~/bin $PATH
 set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/tools $PATH
 set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/platform-tools $PATH
 set PATH ~/apache-maven-3.2.3/bin $PATH
+set PATH ~/go/bin $PATH
+set -x GOROOT ~/go
 set ANDROID_HOME /home/richard/adt-bundle-linux-x86_64-20140702/sdk
 set -gx RBENV_ROOT ~/.rbenv
 . (rbenv init -|psub)
