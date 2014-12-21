@@ -1,17 +1,18 @@
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
 set ts=4
+set sts=4
 set sw=4
 set expandtab
-" set co=125
-" set lines=35
 
 " case insensitive searching...
 set ignorecase
 set smartcase
+"
+" allow files to override defaults
+set modeline
 
 " I want line numbers
 set nu
@@ -22,11 +23,10 @@ set smartindent
 
 set foldmethod=marker
 
-" maximize me
-" au GUIEnter * simalt ~x
-
 set bdir=/home/richard/.vimtmp
 set dir=/home/richard/.vimtmp
+set undodir=/home/richard/.vimtmp
+set undofile
 
 " display char information in bottom right.
 set ruler
@@ -35,53 +35,53 @@ set laststatus=2
 " Use incremental searching
 set incsearch
 
-" Do not highlight search results
-"set nohlsearch
-
-set scrolljump=5
-
 " Indicate jump out of the screen when 3 lines before end of the screen
 set scrolloff=3
+set scrolljump=5
+
+" Always.
+set enc=utf-8
+syntax on
+
+" make backspace work correctly.
+set backspace=2
+
+" for filename tab completion
+set wildmode=list:longest,full
 
 " some tab customisations...
 map <C-l> :tabnext<CR>
 map <C-h> :tabprev<CR>
 map <C-t> :tabnew<CR>
 " map <C-e> :tabnew<CR>:NERDTree<CR>
+
 map <C-e> :NERDTreeToggle<CR>
 map <C-space> :CommandT<CR>
-vmap <ENTER> :Eval<CR>
+autocmd FileType clojure vmap <ENTER> :Eval<CR>
+au FileType javascript setl sw=2 sts=2 ts=2 et
+au FileType html setl sw=2 sts=2 ts=2 et
+autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
+autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
-
-set guioptions-=T
-"set gfn=Consolas:h10:cANSI
-set guioptions-=m
-
-set undodir=/home/richard/.vimtmp
-set undofile
-
-set enc=utf-8
-
-set modeline
-syntax on
-filetype indent plugin on
-
-set mouse=a
-set ttymouse=xterm2
+filetype plugin indent on
 
 execute pathogen#infect()
 
-"let &t_Co=256
 if has("gui_running")
+    " kill tabs
+    set guioptions-=T
+    " kill menu
+    set guioptions-=m
     "colorscheme github
     colorscheme desertEx
+    "set gfn=Consolas:h10:cANSI
+    set guifont=Consolas
+else
+    " force 256 color
+    " let &t_Co=256
+    set mouse=a
+    set ttymouse=xterm2
 endif
-
-" for filename completion
-set wildmode=longest,list
-
-set backspace=2
-set guifont=Consolas
 
 
 "autocmd FileType go compiler golang
@@ -102,3 +102,8 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" MySQL
+let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=127.0.0.1'
+" :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
+
