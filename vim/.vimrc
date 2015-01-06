@@ -119,6 +119,7 @@ endif
 map <C-e> :NERDTreeToggle<CR>
 map <C-space> :CommandT<CR>
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
+autocmd FileType clojure nmap <C-ENTER> :%Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
 autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
