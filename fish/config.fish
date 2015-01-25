@@ -41,7 +41,7 @@ set PATH ~/.rbenv/bin $PATH
 set PATH ~/bin $PATH
 set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/tools $PATH
 set PATH /home/richard/adt-bundle-linux-x86_64-20140702/sdk/platform-tools $PATH
-set PATH ~/apache-maven-3.2.3/bin $PATH
+set PATH ~/apache-maven-3.2.5/bin $PATH
 set PATH ~/go/bin $PATH
 set -x GOROOT ~/go
 set ANDROID_HOME /home/richard/adt-bundle-linux-x86_64-20140702/sdk

@@ -39,6 +39,9 @@ set incsearch
 set scrolloff=3
 set scrolljump=5
 
+" highlight my search results plz
+set hlsearch
+
 " Always.
 set enc=utf-8
 syntax on
@@ -118,8 +121,16 @@ endif
 
 map <C-e> :NERDTreeToggle<CR>
 map <C-space> :CommandT<CR>
+function! SetClojureShortcuts()
+    if @% =~ '.*test.clj'
+        " note the set filetype to re-apply syntax highlighting
+        nmap <C-ENTER> :w<CR> :RunTests<CR> :set filetype=clojure<CR>
+    else
+        nmap <C-ENTER> :%Eval<CR>
+    endif
+endfunction
+autocmd BufEnter *.clj call SetClojureShortcuts()
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
-autocmd FileType clojure nmap <C-ENTER> :%Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
 autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
