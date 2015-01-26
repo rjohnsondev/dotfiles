@@ -152,5 +152,6 @@ au Syntax * RainbowParenthesesLoadBraces
 
 " Databases
 let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=127.0.0.1'
+let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=temp:extra=-t'
 " :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
 
