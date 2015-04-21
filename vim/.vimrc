@@ -103,6 +103,8 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'guns/vim-slamhound'
 Plugin 'derekwyatt/vim-scala.git'
 Plugin 'wincent/Command-T'
+Plugin 'derekwyatt/vim-scala.git'
+"Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'dbext.vim'
 " Git plugin not hosted on GitHub
@@ -140,8 +142,8 @@ autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
 let g:golang_goroot = "/home/richard/go/"
 
-let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.0/checkstyle-6.0-all.jar"
-let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/checkstyle-6.0/sun_checks.xml"
+let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.3-all.jar"
+let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/sun_checks.xml"
 let g:syntastic_java_checkers=['checkstyle']
 let g:syntastic_python_checkers=['flake8']
 

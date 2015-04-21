@@ -46,6 +46,7 @@ set PATH ~/ec2-api-tools-1.7.3.0/bin $PATH
 set PATH ~/go/bin $PATH
 set -x GOROOT ~/go
 set ANDROID_HOME /home/richard/adt-bundle-linux-x86_64-20140702/sdk
+set CLASSPATH /home/richard/classpath $CLASSPATH
 set -gx RBENV_ROOT ~/.rbenv
 . (rbenv init -|psub)
 
