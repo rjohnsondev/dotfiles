@@ -103,7 +103,6 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'guns/vim-slamhound'
 Plugin 'derekwyatt/vim-scala.git'
 Plugin 'wincent/Command-T'
-Plugin 'derekwyatt/vim-scala.git'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'dbext.vim'
