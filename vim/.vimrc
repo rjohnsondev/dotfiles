@@ -118,8 +118,8 @@ filetype plugin indent on    " required
 " Bundle customisations
 "
 if has("gui_running")
-    "colorscheme github
-    colorscheme desertEx
+    colorscheme github
+    "colorscheme desertEx
 endif
 
 map <C-e> :NERDTreeToggle<CR>

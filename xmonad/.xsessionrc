@@ -1,5 +1,5 @@
-#if [ -f /usr/bin/xcompmgr ]
-#    then
-#        /usr/bin/xcompmgr -n &
-#fi
+if [ -f /usr/bin/xcompmgr ]
+    then
+        /usr/bin/xcompmgr -n &
+fi
 
