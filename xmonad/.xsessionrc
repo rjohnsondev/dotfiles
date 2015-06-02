@@ -3,3 +3,6 @@ if [ -f /usr/bin/xcompmgr ]
         /usr/bin/xcompmgr -n &
 fi
 
+unity-settings-daemon &
+feh --bg-scale ~/Pictures/Animals___Cats_Siamese_cat_closeup_045650_.jpg &
+xmodmap

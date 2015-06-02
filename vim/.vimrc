@@ -107,7 +107,7 @@ Plugin 'wincent/Command-T'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'dbext.vim'
 " Git plugin not hosted on GitHub
-Plugin 'go', {'pinned': 1}
+"Plugin 'go', {'pinned': 1}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
