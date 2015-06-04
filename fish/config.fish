@@ -13,7 +13,7 @@ Theme 'rjohnson'
 Plugin 'theme'
 Plugin 'vi-mode'
 
-set PATH /usr/local/bin $PATH ~/.cabal/bin
+set PATH /usr/local/bin ~/.cabal/bin $PATH
 
 eval (python -m virtualfish auto_activation)
 
