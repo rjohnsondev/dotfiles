@@ -4,7 +4,7 @@ if [ -f /usr/bin/xcompmgr ]
 fi
 
 unity-settings-daemon &
-feh --bg-scale ~/Pictures/Animals___Cats_Siamese_cat_closeup_045650_.jpg &
-/usr/bin/xmodmap ~/.Xmodmap &
+feh --bg-scale ~/Pictures/Gas_centrifuge_cascade.jpg &
 /home/richard/.cabal/bin/xmobar ~/.xmonad/xmobar.config &
-
+(sleep 3; /usr/bin/setxkbmap -option caps:escape) &
+(sleep 3; blueproximity) &
