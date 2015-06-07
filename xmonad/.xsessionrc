@@ -6,5 +6,7 @@ fi
 unity-settings-daemon &
 feh --bg-scale ~/Pictures/Gas_centrifuge_cascade.jpg &
 /home/richard/.cabal/bin/xmobar ~/.xmonad/xmobar.config &
+(sleep 2; xset s off) &
+(sleep 2; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
 (sleep 3; blueproximity) &
