@@ -14,6 +14,8 @@ Plugin 'theme'
 Plugin 'vi-mode'
 
 set PATH /usr/local/bin ~/.cabal/bin $PATH
+set PATH ~/go/bin $PATH
+set -x GOROOT ~/go
 
 eval (python -m virtualfish auto_activation)
 
