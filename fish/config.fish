@@ -14,6 +14,7 @@ Plugin 'theme'
 Plugin 'vi-mode'
 
 set PATH /usr/local/bin ~/.cabal/bin $PATH
+set PATH ~/bin $PATH
 set PATH ~/go/bin $PATH
 set -x GOROOT ~/go
 
