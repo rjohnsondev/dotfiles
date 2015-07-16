@@ -20,3 +20,6 @@ set -x GOROOT ~/go
 
 eval (python -m virtualfish auto_activation)
 
+set -gx RBENV_ROOT ~/.rbenv/bin
+set PATH $RBENV_ROOT $PATH
+. (rbenv init -|psub)
