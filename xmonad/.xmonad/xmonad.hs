@@ -30,6 +30,6 @@ main = xmonad $ defaultConfig
               , ((noModMask, xF86XK_AudioMute) , spawn "amixer -D pulse set Master 1+ toggle")
               , ((noModMask, xF86XK_AudioRaiseVolume) , spawn "amixer -D pulse sset Master 5%+")
               , ((noModMask, xF86XK_AudioLowerVolume) , spawn "amixer -D pulse sset Master 5%-")
-              , ((mod4Mask .|. shiftMask, xK_l) , spawn "xscreensaver-command -l; sleep 3; xset dpms force off")
+              , ((mod4Mask .|. shiftMask, xK_l) , spawn "xset dpms force off; slock")
               , ((mod4Mask , xK_i) , spawn "google-chrome --app='https://skim.hipchat.com/chat'")
               , ((mod4Mask , xK_s) , spawn "google-chrome --app='https://skimlinks.slack.com'") ]
