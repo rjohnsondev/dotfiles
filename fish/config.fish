@@ -16,7 +16,12 @@ Plugin 'vi-mode'
 set PATH /usr/local/bin ~/.cabal/bin $PATH
 set PATH ~/bin $PATH
 set PATH ~/go/bin $PATH
+set PATH ~/.rbenv/bin $PATH
+set PATH ~/apache-maven-3.3.3/bin $PATH
 set -x GOROOT ~/go
+
+set -gx RBENV_ROOT ~/.rbenv
+. (rbenv init -|psub)
 
 eval (python -m virtualfish auto_activation)
 
