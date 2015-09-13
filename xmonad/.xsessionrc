@@ -4,7 +4,7 @@ if [ -f /usr/bin/xcompmgr ]
 fi
 
 unity-settings-daemon &
-feh --bg-scale ~/Pictures/Gas_centrifuge_cascade.jpg &
+feh --bg-scale ~/Pictures/Plutonium_pellet.jpg &
 /home/richard/.cabal/bin/xmobar ~/.xmonad/xmobar.config &
 (sleep 2; xset dpms 300 300 300) &
 (sleep 2; xautolock -time 5 -locker slock) &

@@ -18,6 +18,7 @@ set PATH ~/bin $PATH
 set PATH ~/go/bin $PATH
 set PATH ~/.rbenv/bin $PATH
 set PATH ~/apache-maven-3.3.3/bin $PATH
+set PATH ~/apache-ant-1.9.6/bin $PATH
 set -x GOROOT ~/go
 
 set -gx RBENV_ROOT ~/.rbenv
