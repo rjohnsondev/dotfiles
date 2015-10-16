@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Hooks.EwmhDesktops
 
 import qualified Data.Map as M
 import Data.Bits ((.|.))
@@ -11,7 +12,7 @@ import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Hooks.ManageHelpers (isFullscreen,doFullFloat)
 import Graphics.X11.ExtraTypes.XF86
 
-main = xmonad $ defaultConfig
+main = xmonad $ ewmh defaultConfig
         { modMask = mod4Mask
         , focusedBorderColor = "grey"
         , normalBorderColor  = "black"
