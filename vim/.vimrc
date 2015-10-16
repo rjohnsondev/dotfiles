@@ -103,11 +103,16 @@ Plugin 'kshenoy/vim-signature'
 Plugin 'guns/vim-slamhound'
 Plugin 'derekwyatt/vim-scala.git'
 Plugin 'wincent/Command-T'
+Plugin 'rodjek/vim-puppet'
+Plugin 'markcornick/vim-terraform'
+Plugin 'dag/vim2hs'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'Shougo/vimproc.vim'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'dbext.vim'
 " Git plugin not hosted on GitHub
-Plugin 'go', {'pinned': 1}
+"Plugin 'go', {'pinned': 1}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
