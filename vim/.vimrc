@@ -64,14 +64,16 @@ if has("gui_running")
     " kill menu
     set guioptions-=m
     "set gfn=Consolas:h10:cANSI
-    set guifont=Consolas
+    set guifont=Consolas\ 12
     " consolas looks better with an extra pixel between lines
     set linespace=1
 else
     " force 256 color
     " let &t_Co=256
     set mouse=a
-    set ttymouse=xterm2
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
 endif
 
 
@@ -80,7 +82,9 @@ endif
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+"set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#rc('~/.config/nvim/bundle')
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
@@ -108,6 +112,7 @@ Plugin 'markcornick/vim-terraform'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'godlygeek/tabular'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'dbext.vim'
@@ -144,6 +149,8 @@ autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
 autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
 autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
+let g:haskell_multiline_strings = 1
+
 let g:golang_goroot = "/home/richard/go/"
 
 let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.3-all.jar"
@@ -159,7 +166,7 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Databases
-let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=127.0.0.1'
+let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=localhost'
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=temp:extra=-t'
 " :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
 
