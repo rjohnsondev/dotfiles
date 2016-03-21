@@ -26,6 +26,7 @@ main = xmonad $ ewmh defaultConfig
     philKeys = M.fromList $
               [ ((mod4Mask , xK_g) , spawn "chromium-browser") 
               , ((mod4Mask , xK_p) , spawn "gmrun")
+              , ((mod4Mask , xK_u) , spawn "unity-control-center")
               , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
               , ((noModMask, xF86XK_MonBrightnessDown) , spawn "xbacklight -dec 10")
               , ((noModMask, xF86XK_AudioMute) , spawn "amixer -D pulse set Master 1+ toggle")

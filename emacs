@@ -20,6 +20,12 @@
 (tool-bar-mode -1)
 (global-linum-mode 1)
 
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (set-variable 'undo-tree-auto-save-history 1)
 
 (custom-set-variables
@@ -31,6 +37,7 @@
  '(custom-safe-themes
    (quote
     ("dc758223066a28f3c6ef6c42c9136bf4c913ec6d3b710794252dc072a3b92b14" default)))
+ '(inhibit-startup-screen t)
  '(tool-bar-mode nil))
  '(custom-theme-directory "~/.emacs.d/themes/")
 (custom-set-faces
