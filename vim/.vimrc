@@ -2,6 +2,10 @@ set nocompatible
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
+if has('nvim')
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
 set ts=4
 set sts=4
 set sw=4
@@ -70,8 +74,8 @@ if has("gui_running")
 else
     " force 256 color
     " let &t_Co=256
-    set mouse=a
     if !has('nvim')
+        set mouse=a
         set ttymouse=xterm2
     endif
 endif
@@ -113,8 +117,11 @@ Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
+"Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
+Plugin 'venantius/vim-cljfmt'
 Plugin 'dbext.vim'
 " Git plugin not hosted on GitHub
 "Plugin 'go', {'pinned': 1}
@@ -126,13 +133,12 @@ filetype plugin indent on    " required
 "
 " Bundle customisations
 "
-if has("gui_running")
+"if has("gui_running")
     colorscheme github
     "colorscheme desertEx
-endif
+"endif
 
 map <C-e> :NERDTreeToggle<CR>
-map <C-space> :CommandT<CR>
 function! SetClojureShortcuts()
     if @% =~ '.*test.clj'
         " note the set filetype to re-apply syntax highlighting
@@ -145,9 +151,9 @@ autocmd BufEnter *.clj call SetClojureShortcuts()
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
-autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
-autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
-autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
+" autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
+" autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
+" autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
 let g:haskell_multiline_strings = 1
 
