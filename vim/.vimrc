@@ -4,6 +4,7 @@ behave mswin
 
 if has('nvim')
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
 
 set ts=4
@@ -53,6 +54,9 @@ syntax on
 " make backspace work correctly.
 set backspace=2
 
+" I want to switch buffers without saving.
+set hidden
+
 " for filename tab completion
 set wildmode=list:longest,full
 
@@ -73,7 +77,7 @@ if has("gui_running")
     set linespace=1
 else
     " force 256 color
-    " let &t_Co=256
+    "let &t_Co=256
     if !has('nvim')
         set mouse=a
         set ttymouse=xterm2
@@ -89,6 +93,7 @@ filetype off                  " required
 "set rtp+=~/.config/nvim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#rc('~/.config/nvim/bundle')
+
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
@@ -97,11 +102,12 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
 Plugin 'rjohnsondev/vim-compiler-go'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
 Plugin 'flazz/vim-colorschemes'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -110,7 +116,6 @@ Plugin 'motus/pig.vim'
 Plugin 'kshenoy/vim-signature'
 Plugin 'guns/vim-slamhound'
 Plugin 'derekwyatt/vim-scala.git'
-Plugin 'wincent/Command-T'
 Plugin 'rodjek/vim-puppet'
 Plugin 'markcornick/vim-terraform'
 Plugin 'dag/vim2hs'
@@ -118,10 +123,11 @@ Plugin 'eagletmt/ghcmod-vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
 "Plugin 'wincent/command-t'
-Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'wincent/Command-T'
+"Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'venantius/vim-cljfmt'
+"Plugin 'venantius/vim-cljfmt'
 Plugin 'dbext.vim'
 " Git plugin not hosted on GitHub
 "Plugin 'go', {'pinned': 1}
@@ -135,8 +141,11 @@ filetype plugin indent on    " required
 "
 "if has("gui_running")
     colorscheme github
+    "colorscheme solarized
     "colorscheme desertEx
 "endif
+
+let g:rainbow_active=1
 
 map <C-e> :NERDTreeToggle<CR>
 function! SetClojureShortcuts()
@@ -166,13 +175,9 @@ let g:syntastic_python_checkers=['flake8']
 
 let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 " Databases
 let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=localhost'
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=temp:extra=-t'
 " :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
 
+let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
