@@ -1,8 +1,9 @@
 set nocompatible
-source $VIMRUNTIME/mswin.vim
-behave mswin
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
 
 if has('nvim')
+    set termguicolors
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
@@ -181,3 +182,10 @@ let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=t
 " :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
 
 let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
+"\	'guifgs': ['#3a5fcd', '#cd6600', '#43cd80', '#cd2626'],
+"
+"let g:lispwords = "POST,GET"
+
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT']
+
