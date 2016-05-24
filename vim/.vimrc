@@ -35,7 +35,7 @@ set undodir=/home/richard/.vimtmp
 set undofile
 
 " display char information in bottom right.
-set ruler
+"set ruler
 set laststatus=2
 
 " Use incremental searching
@@ -111,7 +111,9 @@ Plugin 'flazz/vim-colorschemes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'motus/pig.vim'
 Plugin 'kshenoy/vim-signature'
@@ -189,3 +191,8 @@ let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT']
 
+" make cursor stay put after yank
+vnoremap <expr>y "my\"" . v:register . "y`y"
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='light'
