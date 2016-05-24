@@ -9,3 +9,5 @@ end
 
 set -x NVM_DIR ~/.nvm
 source ~/.config/fish/nvm-wrapper/nvm.fish
+
+alias vim "nvim"

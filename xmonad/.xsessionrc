@@ -4,8 +4,8 @@ if [ -f /usr/bin/xcompmgr ]
 fi
 
 unity-settings-daemon &
-feh --bg-scale ~/Pictures/Animals___Cats_Siamese_cat_closeup_045650_.jpg &
-/home/richard/.cabal/bin/xmobar ~/.xmonad/xmobar.config &
+feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
+(sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 2; xset dpms 300 300 300) &
 /usr/bin/setxkbmap -option caps:escape &
 xsetroot -cursor_name left_ptr
