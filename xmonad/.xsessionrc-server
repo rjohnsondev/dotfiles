@@ -1,0 +1,11 @@
+if [ -f /usr/bin/xcompmgr ]
+    then
+        /usr/bin/xcompmgr -n &
+fi
+
+unity-settings-daemon &
+feh --bg-scale ~/Pictures/Animals___Cats_Siamese_cat_closeup_045650_.jpg &
+/home/richard/.cabal/bin/xmobar ~/.xmonad/xmobar.config &
+(sleep 2; xset dpms 300 300 300) &
+/usr/bin/setxkbmap -option caps:escape &
+xsetroot -cursor_name left_ptr
