@@ -61,6 +61,9 @@ set hidden
 " for filename tab completion
 set wildmode=list:longest,full
 
+" make yank more consistent
+nnoremap Y y$
+
 " some tab customisations...
 map <C-l> :tabnext<CR>
 map <C-h> :tabprev<CR>
@@ -196,3 +199,10 @@ vnoremap <expr>y "my\"" . v:register . "y`y"
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
+
+let g:NERDTreeMinimalUI = 1
+
+function NERDTreeMyOpenFile(node)
+    call a:node.activate({'reuse': 'currenttab', 'where': 'p'})
+endfunction
+autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
