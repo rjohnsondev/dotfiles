@@ -128,6 +128,7 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'guns/vim-clojure-highlight'
 "Plugin 'wincent/command-t'
 "Plugin 'wincent/Command-T'
 "Plugin 'ctrlpvim/ctrlp.vim'
@@ -166,6 +167,7 @@ autocmd BufEnter *.clj call SetClojureShortcuts()
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
+au FileType java setl sw=2 sts=2 ts=2 et
 " autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
 " autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
 " autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
@@ -174,10 +176,12 @@ let g:haskell_multiline_strings = 1
 
 let g:golang_goroot = "/home/richard/go/"
 
-let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.3-all.jar"
+let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.19-all.jar"
 let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/sun_checks.xml"
+" let g:syntastic_java_checkstyle_conf_file = "checkstyle.xml"
+let g:syntastic_java_maven_executable = "/home/richard/apache-maven-3.3.9/bin/mvn"
 let g:syntastic_java_checkers=['checkstyle']
-let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_checkers=['flake8']
 
 let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 
@@ -195,7 +199,7 @@ let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT']
 
 " make cursor stay put after yank
-vnoremap <expr>y "my\"" . v:register . "y`y"
+" vnoremap <expr>y "my\"" . v:register . "y`y"
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
