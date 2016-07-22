@@ -167,7 +167,7 @@ autocmd BufEnter *.clj call SetClojureShortcuts()
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
-au FileType java setl sw=2 sts=2 ts=2 et
+" au FileType java setl sw=2 sts=2 ts=2 et
 " autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
 " autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
 " autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
