@@ -24,7 +24,7 @@ main = xmonad $ ewmh defaultConfig
         }
   where
     philKeys = M.fromList $
-              [ ((mod4Mask , xK_g) , spawn "chromium-browser") 
+              [ ((mod4Mask , xK_g) , spawn "google-chrome") 
               , ((mod4Mask , xK_p) , spawn "gmrun")
               , ((mod4Mask , xK_u) , spawn "unity-control-center")
               , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
@@ -34,5 +34,6 @@ main = xmonad $ ewmh defaultConfig
               , ((noModMask, xF86XK_AudioLowerVolume) , spawn "amixer -D pulse sset Master 5%-")
               -- , ((noModMask, xK_Caps_Lock) , spawn "/usr/bin/setxkbmap -option caps:escape")
               , ((mod4Mask .|. shiftMask, xK_l) , spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
-              , ((mod4Mask , xK_i) , spawn "chromium-browser --app='https://skim.hipchat.com/chat'")
-              , ((mod4Mask , xK_s) , spawn "chromium-browser --app='https://skimlinks.slack.com'") ]
+              -- , ((mod4Mask , xK_i) , spawn "chromium-browser --app='https://skim.hipchat.com/chat'")
+              -- , ((mod4Mask , xK_s) , spawn "chromium-browser --app='https://hackcolumn.slack.com'") ]
+              ]

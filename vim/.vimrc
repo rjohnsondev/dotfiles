@@ -129,6 +129,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'guns/vim-clojure-highlight'
+Plugin 'mustache/vim-mustache-handlebars'
+"Plugin 'othree/html5.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'wincent/Command-T'
 "Plugin 'ctrlpvim/ctrlp.vim'
@@ -196,7 +198,8 @@ let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
 "let g:lispwords = "POST,GET"
 
 let g:clojure_fuzzy_indent = 1
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT']
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT', 'go-loop']
+let g:clojure_align_multiline_strings = 1
 
 " make cursor stay put after yank
 " vnoremap <expr>y "my\"" . v:register . "y`y"
