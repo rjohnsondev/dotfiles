@@ -11,6 +11,7 @@ import XMonad.Layout.LayoutScreens
 import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Hooks.ManageHelpers (isFullscreen,doFullFloat)
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Hooks.ManageDocks
 
 main = xmonad $ ewmh defaultConfig
         { modMask = mod4Mask
@@ -27,6 +28,7 @@ main = xmonad $ ewmh defaultConfig
               [ ((mod4Mask , xK_g) , spawn "google-chrome") 
               , ((mod4Mask , xK_p) , spawn "gmrun")
               , ((mod4Mask , xK_u) , spawn "unity-control-center")
+              , ((mod4Mask , xK_b) , sendMessage ToggleStruts)
               , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
               , ((noModMask, xF86XK_MonBrightnessDown) , spawn "xbacklight -dec 10")
               , ((noModMask, xF86XK_AudioMute) , spawn "amixer -D pulse set Master 1+ toggle")

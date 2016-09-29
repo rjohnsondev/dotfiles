@@ -4,7 +4,8 @@ if [ -f /usr/bin/xcompmgr ]
 fi
 
 unity-settings-daemon &
-feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
+#feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
+feh --bg-scale ~/Pictures/n7P9k.jpg
 xmobar ~/.xmonad/xmobar.config &
 (sleep 2; xset dpms 300 300 300) &
 /usr/bin/setxkbmap -option caps:escape &
