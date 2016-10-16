@@ -13,8 +13,9 @@ function virtualenv_prompt_info(){
 }
 
 local ret_status="%(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ )"
-PROMPT='$(virtualenv_prompt_info)$(vi_mode_prompt_info)%{$fg[white]%}%p[%{$fg[grey]%}${PWD/#$HOME/~}%{$fg[blue]%}$(git_prompt_info)%{$fg[white]%}]% %{$reset_color%}${ret_status}'
+PROMPT='$(virtualenv_prompt_info)$(vi_mode_prompt_info)%{$fg[white]%}%p[%{$fg[grey]%}${PWD/#$HOME/~}%{$fg[blue]%}$(git_prompt_info)%{$fg[white]%}]% ${ret_status}%{$reset_color%}'
 
+RPROMPT="%{$fg[grey]%}---%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
