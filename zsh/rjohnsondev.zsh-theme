@@ -12,7 +12,7 @@ function virtualenv_prompt_info(){
     echo "%{$fg[grey]%}[${VIRTUAL_ENV:t}] %{$reset_color%}"
 }
 
-local ret_status="%(?:%{$fg[green]%}➜ :%{$fg[red]%}➜ )"
+local ret_status="%(?:%{$fg[blue]%}➜ :%{$fg[red]%}➜ )"
 PROMPT='$(virtualenv_prompt_info)$(vi_mode_prompt_info)%{$fg[white]%}%p[%{$fg[grey]%}${PWD/#$HOME/~}%{$fg[blue]%}$(git_prompt_info)%{$fg[white]%}]% ${ret_status}%{$reset_color%}'
 
 RPROMPT="%{$fg[grey]%}---%{$reset_color%}"
