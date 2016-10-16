@@ -1,6 +1,6 @@
 
 # update paths
-set -x PATH /usr/local/bin ~/.cabal/bin ~/bin ~/apache-maven-3.3.9/bin /home/richard/gcloud/google-cloud-sdk/bin ~/.rbenv/bin /usr/local/go/bin $PATH
+set -x PATH /usr/local/bin ~/bin ~/apache-maven-3.3.9/bin /home/richard/gcloud/google-cloud-sdk/bin ~/.rbenv/bin /usr/local/go/bin $PATH
 
 # use vi mode
 function fish_user_key_bindings

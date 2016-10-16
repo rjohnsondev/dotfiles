@@ -138,6 +138,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'venantius/vim-cljfmt'
 Plugin 'dbext.vim'
+Plugin 'pearofducks/ansible-vim'
 " Git plugin not hosted on GitHub
 "Plugin 'go', {'pinned': 1}
 
