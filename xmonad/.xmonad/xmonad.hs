@@ -26,14 +26,14 @@ main = xmonad $ ewmh defaultConfig
   where
     philKeys = M.fromList $
               [ ((mod4Mask , xK_g) , spawn "google-chrome") 
-              , ((mod4Mask , xK_p) , spawn "gmrun")
+              -- , ((mod4Mask , xK_p) , spawn "gmrun")
               , ((mod4Mask , xK_u) , spawn "unity-control-center")
               , ((mod4Mask , xK_b) , sendMessage ToggleStruts)
               , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
               , ((noModMask, xF86XK_MonBrightnessDown) , spawn "xbacklight -dec 10")
               , ((noModMask, xF86XK_AudioMute) , spawn "amixer -D pulse set Master 1+ toggle")
-              , ((noModMask, xF86XK_AudioRaiseVolume) , spawn "amixer -D pulse sset Master 5%+")
-              , ((noModMask, xF86XK_AudioLowerVolume) , spawn "amixer -D pulse sset Master 5%-")
+              , ((noModMask, xF86XK_AudioRaiseVolume) , spawn "amixer -D pulse sset Master 2%+")
+              , ((noModMask, xF86XK_AudioLowerVolume) , spawn "amixer -D pulse sset Master 2%-")
               -- , ((noModMask, xK_Caps_Lock) , spawn "/usr/bin/setxkbmap -option caps:escape")
               , ((mod4Mask .|. shiftMask, xK_l) , spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
               ]
