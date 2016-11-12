@@ -26,7 +26,7 @@ main = xmonad $ ewmh defaultConfig
   where
     philKeys = M.fromList $
               [ ((mod4Mask , xK_g) , spawn "google-chrome") 
-              -- , ((mod4Mask , xK_p) , spawn "gmrun")
+              , ((mod4Mask , xK_p) , spawn "dmenu_run")
               , ((mod4Mask , xK_u) , spawn "unity-control-center")
               , ((mod4Mask , xK_b) , sendMessage ToggleStruts)
               , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
