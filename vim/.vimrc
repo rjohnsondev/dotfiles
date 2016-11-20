@@ -210,6 +210,15 @@ let g:airline_theme='light'
 
 let g:NERDTreeMinimalUI = 1
 
+let g:syntastic_scala_scalastyle_jar = '/home/richard/bin/scalastyle_2.10-0.8.0-batch.jar'
+let g:syntastic_scala_scalastyle_config_file = '/home/richard/bin/scalastyle_config.xml'
+let g:syntastic_scala_checkers = ['scalastyle']
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 function NERDTreeMyOpenFile(node)
     call a:node.activate({'reuse': 'currenttab', 'where': 'p'})
 endfunction
