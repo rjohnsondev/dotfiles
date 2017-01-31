@@ -51,7 +51,7 @@ ZSH_THEME="rjohnsondev"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions stack)
 
 # User configuration
 
@@ -84,21 +84,28 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vi="nvim"
-alias vim="nvim"
 ZSH_AUTOSUGGEST_STRATEGY="match_prev_cmd"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export GOROOT=/home/richard/go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:~/apache-maven-3.3.9/bin
+export PATH=$PATH:~/.local/bin
+
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+fpath+=~/.zfunc
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /home/richard/gcloud/google-cloud-sdk/path.zsh.inc ]; then
-  source '/home/richard/gcloud/google-cloud-sdk/path.zsh.inc'
+if [ -f /home/richard/google-cloud-sdk/path.zsh.inc ]; then
+  source '/home/richard/google-cloud-sdk/path.zsh.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f /home/richard/gcloud/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/home/richard/gcloud/google-cloud-sdk/completion.zsh.inc'
+if [ -f /home/richard/google-cloud-sdk/completion.zsh.inc ]; then
+  source '/home/richard/google-cloud-sdk/completion.zsh.inc'
 fi
-export GOROOT=/home/richard/go
-export PATH=$PATH:$GOROOT/bin
