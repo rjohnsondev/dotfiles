@@ -143,6 +143,9 @@ Plugin 'pearofducks/ansible-vim'
 "Plugin 'go', {'pinned': 1}
 
 " All of your Plugins must be added before the following line
+Plugin 'cespare/vim-toml'
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -225,3 +228,5 @@ endfunction
 autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMyOpenFile', 'scope': 'FileNode', 'override': 1 })
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+
+let $PATH = $PATH . ':' . expand('~/.cabal/bin')
