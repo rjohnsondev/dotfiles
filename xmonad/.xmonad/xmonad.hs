@@ -1,5 +1,6 @@
 import XMonad
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.SetWMName
 
 import qualified Data.Map as M
 import Data.Bits ((.|.))
@@ -22,6 +23,7 @@ main = xmonad $ ewmh defaultConfig
         , terminal = "gnome-terminal"
         , focusFollowsMouse = True
         , keys     = \c -> philKeys `M.union` keys defaultConfig c
+        , startupHook = setWMName "LG3D"
         }
   where
     philKeys = M.fromList $

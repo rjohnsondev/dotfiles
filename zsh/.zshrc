@@ -97,7 +97,7 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 eval "$(stack --bash-completion-script stack)"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
 fpath+=~/.zfunc
 
 # The next line updates PATH for the Google Cloud SDK.
