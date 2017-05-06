@@ -1,9 +1,9 @@
 function vi_mode_prompt_info() {
     if test "$KEYMAP" != "vicmd"
     then
-        echo "%{$fg[white]%}[%{$fg_bold[green]%}I%{$fg[white]%}] %{$reset_color%}"
+        echo "%{$fg[white]%}[%{$fg_bold[green]%}I%{$reset_color%}%{$fg[white]%}] %{$reset_color%}"
     else
-        echo "%{$fg[white]%}[%{$fg_bold[blue]%}N%{$fg[white]%}] %{$reset_color%}"
+        echo "%{$fg[white]%}[%{$fg_bold[blue]%}N%{$reset_color%}%{$fg[white]%}] %{$reset_color%}"
     fi
 }
 
