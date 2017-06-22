@@ -51,7 +51,8 @@ ZSH_THEME="rjohnsondev"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions stack)
+#plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions stack)
+plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -90,12 +91,12 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:~/apache-maven-3.3.9/bin
+export PATH=$PATH:~/apache-maven-3.5.0/bin
 export PATH=$PATH:~/.local/bin
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-eval "$(stack --bash-completion-script stack)"
+# eval "$(stack --bash-completion-script stack)"
 
 export PATH="$PATH:$HOME/.cargo/bin"
 fpath+=~/.zfunc

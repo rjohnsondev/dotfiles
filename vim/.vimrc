@@ -4,6 +4,7 @@ set nocompatible
 
 if has('nvim')
     set termguicolors
+    let $COLORTERM= "gnome-terminal"
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
     let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 endif
@@ -82,10 +83,8 @@ if has("gui_running")
 else
     " force 256 color
     "let &t_Co=256
-    if !has('nvim')
-        set mouse=a
-        set ttymouse=xterm2
-    endif
+    set mouse=a
+    " set ttymouse=xterm2
 endif
 
 
@@ -107,7 +106,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rjohnsondev/vim-compiler-go'
 Plugin 'luochen1990/rainbow'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
 Plugin 'flazz/vim-colorschemes'
@@ -145,6 +144,7 @@ Plugin 'pearofducks/ansible-vim'
 " All of your Plugins must be added before the following line
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
+Plugin 'w0rp/ale'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,14 +169,14 @@ function! SetClojureShortcuts()
         nmap <C-ENTER> :%Eval<CR>
     endif
 endfunction
-autocmd BufEnter *.clj call SetClojureShortcuts()
+" autocmd BufEnter *.clj call SetClojureShortcuts()
 autocmd FileType clojure vmap <ENTER> :Eval<CR>
 au FileType javascript setl sw=2 sts=2 ts=2 et
 au FileType html setl sw=2 sts=2 ts=2 et
 " au FileType java setl sw=2 sts=2 ts=2 et
-" autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
-" autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
-" autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
+autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
+autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
+autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
 let g:haskell_multiline_strings = 1
 
@@ -194,6 +194,7 @@ let $PATH .= ":/home/richard/go/bin:/home/richard/apache-maven-3.1.0/bin"
 " Databases
 let g:dbext_default_profile_psql_local = 'type=PGSQL:user=account:host=localhost'
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=temp:extra=-t'
+let g:dbext_default_profile_mysql_slave = 'type=MYSQL:host=10.2.46.142:user=richard.johnson:passwd=\&CeS6byNf^A6:dbname=4thand1_ds:extra=-t'
 " :DBSetOption user|passwd|dsnname|srvname|dbname|host|port|...=<value>
 
 let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
