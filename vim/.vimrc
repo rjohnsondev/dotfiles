@@ -84,7 +84,6 @@ else
     " force 256 color
     "let &t_Co=256
     set mouse=a
-    " set ttymouse=xterm2
 endif
 
 
@@ -231,3 +230,4 @@ autocmd VimEnter * :call NERDTreeAddKeyMap({ 'key': 'o', 'callback': 'NERDTreeMy
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
+

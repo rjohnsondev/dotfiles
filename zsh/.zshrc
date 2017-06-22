@@ -110,3 +110,6 @@ fi
 if [ -f /home/richard/google-cloud-sdk/completion.zsh.inc ]; then
   source '/home/richard/google-cloud-sdk/completion.zsh.inc'
 fi
+export GOROOT=/home/richard/go
+export PATH=$PATH:$GOROOT/bin
+# export PATH=/home/richard/anaconda3/bin:$PATH
