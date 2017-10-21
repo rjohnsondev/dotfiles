@@ -117,3 +117,9 @@ export PATH=$PATH:$GOROOT/bin
 # export PATH=/home/richard/anaconda3/bin:$PATH
 if [ -f '/home/richard/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/completion.zsh.inc'; fi
 # export LESS="-XFR"
+#
+alias opsignin='eval $(op signin draftstars)'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
