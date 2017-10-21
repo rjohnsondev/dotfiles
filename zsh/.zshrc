@@ -8,6 +8,7 @@
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 ZSH_THEME="rjohnsondev"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,10 +102,11 @@ autoload -U +X bashcompinit && bashcompinit
 export PATH="$PATH:$HOME/.cargo/bin"
 fpath+=~/.zfunc
 
+export NVM_DIR="/home/richard/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f /home/richard/google-cloud-sdk/path.zsh.inc ]; then
-  source '/home/richard/google-cloud-sdk/path.zsh.inc'
-fi
+if [ -f '/home/richard/google-cloud-sdk/path.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f /home/richard/google-cloud-sdk/completion.zsh.inc ]; then
@@ -113,3 +115,5 @@ fi
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
 # export PATH=/home/richard/anaconda3/bin:$PATH
+if [ -f '/home/richard/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/completion.zsh.inc'; fi
+# export LESS="-XFR"

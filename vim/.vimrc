@@ -84,6 +84,9 @@ else
     " force 256 color
     "let &t_Co=256
     set mouse=a
+    if !has('nvim')
+        set ttymouse=xterm2
+    endif
 endif
 
 
@@ -96,6 +99,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 " call vundle#rc('~/.config/nvim/bundle')
 
+let g:ale_emit_conflict_warnings = 0
+
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
@@ -105,7 +110,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'rjohnsondev/vim-compiler-go'
 Plugin 'luochen1990/rainbow'
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
 Plugin 'flazz/vim-colorschemes'
@@ -122,8 +128,12 @@ Plugin 'rodjek/vim-puppet'
 Plugin 'markcornick/vim-terraform'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+"Plugin 'ervandew/supertab'
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
+"Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'guns/vim-clojure-highlight'
@@ -134,7 +144,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'vim-scripts/paredit.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'venantius/vim-cljfmt'
+Plugin 'venantius/vim-cljfmt'
 Plugin 'dbext.vim'
 Plugin 'pearofducks/ansible-vim'
 " Git plugin not hosted on GitHub
@@ -143,7 +153,11 @@ Plugin 'pearofducks/ansible-vim'
 " All of your Plugins must be added before the following line
 Plugin 'cespare/vim-toml'
 Plugin 'rust-lang/rust.vim'
-Plugin 'w0rp/ale'
+" Plugin 'lambdatoast/elm.vim.git'
+Plugin 'ElmCast/elm-vim'
+Plugin 'purescript-contrib/purescript-vim'
+Plugin 'FrigoEU/psc-ide-vim'
+Plugin 'elzr/vim-json'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -181,6 +195,8 @@ let g:haskell_multiline_strings = 1
 
 let g:golang_goroot = "/home/richard/go/"
 
+let g:syntastic_disabled_filetypes=['python', 'scala', 'ansible', 'css', 'elm', 'go', 'haskell', 'javascript', 'kotlin', 'markdown', 'php', 'rst', 'sql', 'typescript', 'xml', 'xhtml', 'yaml']
+
 let g:syntastic_java_checkstyle_classpath = "/home/richard/classpath/checkstyle-6.19-all.jar"
 let g:syntastic_java_checkstyle_conf_file = "/home/richard/classpath/sun_checks.xml"
 " let g:syntastic_java_checkstyle_conf_file = "checkstyle.xml"
@@ -204,6 +220,7 @@ let g:rainbow_conf = {'guifgs': ['#27408b', '#8b4500', '#2e8b57', '#8b1a1a'] }
 let g:clojure_fuzzy_indent = 1
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^GET', '^POST', '^DELETE', '^PUT', 'go-loop']
 let g:clojure_align_multiline_strings = 1
+let g:clojure_align_subforms = 1
 
 " make cursor stay put after yank
 " vnoremap <expr>y "my\"" . v:register . "y`y"
@@ -222,6 +239,20 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+let g:psc_ide_syntastic_mode = 1
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+" xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+" nmap ga <Plug>(EasyAlign)
+
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+
 function NERDTreeMyOpenFile(node)
     call a:node.activate({'reuse': 'currenttab', 'where': 'p'})
 endfunction
@@ -231,3 +262,12 @@ autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 
+com! FormatJSON %!python -m json.tool
+
+" Disable haskell-vim omnifunc
+let g:haskellmode_completion_ghc = 0
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
