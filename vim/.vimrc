@@ -130,7 +130,7 @@ Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 "Plugin 'ervandew/supertab'
-Plugin 'Shougo/deoplete.nvim'
+" Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
 "Plugin 'junegunn/vim-easy-align'
@@ -138,6 +138,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'Valloric/YouCompleteMe'
 "Plugin 'othree/html5.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'wincent/Command-T'
@@ -166,9 +167,9 @@ filetype plugin indent on    " required
 " Bundle customisations
 "
 "if has("gui_running")
-    colorscheme github
+    "colorscheme github
     "colorscheme solarized
-    "colorscheme desertEx
+    colorscheme desertEx
 "endif
 
 let g:rainbow_active=1
@@ -269,5 +270,6 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
+set clipboard=unnamed
+
+let g:ale_linters = {'haskell': ['stack-ghc-mod']}

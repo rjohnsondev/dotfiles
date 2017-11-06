@@ -3,10 +3,10 @@ if [ -f /usr/bin/xcompmgr ]
         /usr/bin/xcompmgr -n &
 fi
 
-unity-settings-daemon &
+# unity-settings-daemon &
 # feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
 # feh --bg-scale ~/Pictures/n7P9k.jpg
-(sleep 3; xmobar ~/.xmonad/xmobar.config) &
+# (sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
 xsetroot -cursor_name left_ptr

@@ -1,43 +1,81 @@
+--------------------------------------------------------------------------------
+-- | Example.hs
+--
+-- Example configuration file for xmonad using the latest recommended
+-- features (e.g., 'desktopConfig').
+module Main (main) where
+
+--------------------------------------------------------------------------------
+import System.Exit
 import XMonad
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.SetWMName
-
-import qualified Data.Map as M
-import Data.Bits ((.|.))
-
-import XMonad.Layout.Grid
-import XMonad.Config.Gnome
+import XMonad.Config.Desktop
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageHelpers
+import XMonad.Layout.BinarySpacePartition (emptyBSP)
+import XMonad.Layout.NoBorders (noBorders)
+import XMonad.Layout.ResizableTile (ResizableTall(..))
+import XMonad.Layout.ToggleLayouts (ToggleLayout(..), toggleLayouts)
+import XMonad.Prompt
+import XMonad.Prompt.ConfirmPrompt
+import XMonad.Prompt.Shell
+import XMonad.Util.EZConfig
 import XMonad.Layout.TwoPane
-import XMonad.Layout.LayoutScreens
-import XMonad.Config.Desktop (desktopLayoutModifiers)
-import XMonad.Hooks.ManageHelpers (isFullscreen,doFullFloat)
-import Graphics.X11.ExtraTypes.XF86
-import XMonad.Hooks.ManageDocks
+import XMonad.Layout.Grid
 
-main = xmonad $ ewmh defaultConfig
-        { modMask = mod4Mask
-        , focusedBorderColor = "grey"
-        , normalBorderColor  = "black"
-        , borderWidth = 0
-        , layoutHook = desktopLayoutModifiers ( TwoPane (3/100) (1/2)  ||| Full ||| Grid )
-        , terminal = "gnome-terminal"
-        , focusFollowsMouse = True
-        , keys     = \c -> philKeys `M.union` keys defaultConfig c
-        , startupHook = setWMName "LG3D"
-        }
+
+--------------------------------------------------------------------------------
+main = do
+  spawn "/usr/bin/xmobar /home/richard/.xmonad/xmobar.config" -- Start a task bar such as xmobar.
+
+  -- Start xmonad using the main desktop configuration with a few
+  -- simple overrides:
+  xmonad $ desktopConfig
+    { modMask    = mod4Mask -- Use the "Win" key for the mod key
+    , manageHook = myManageHook <+> manageHook desktopConfig
+    , layoutHook = desktopLayoutModifiers $ myLayouts
+    , borderWidth = 0
+    , logHook    = dynamicLogString def >>= xmonadPropLog
+    }
+
+    `additionalKeysP` -- Add some extra key bindings:
+      [ ("M-S-q",   confirmPrompt myXPConfig "exit" (io exitSuccess))
+      , ("M-g",     spawn "google-chrome") 
+      , ("M-p",     spawn "dmenu_run") 
+      , ("M-<Esc>", sendMessage (Toggle "Full"))
+      , ("M-S-l", spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
+      ]
+
+--------------------------------------------------------------------------------
+-- | Customize layouts.
+--
+-- This layout configuration uses two primary layouts, 'ResizableTall'
+-- and 'BinarySpacePartition'.  You can also use the 'M-<Esc>' key
+-- binding defined above to toggle between the current layout and a
+-- full screen layout.
+myLayouts = toggleLayouts (noBorders Full) others
   where
-    philKeys = M.fromList $
-              [ ((mod4Mask , xK_g) , spawn "google-chrome") 
-              , ((mod4Mask , xK_p) , spawn "dmenu_run")
-              , ((mod4Mask , xK_u) , spawn "unity-control-center")
-              , ((mod4Mask , xK_b) , sendMessage ToggleStruts)
-              , ((noModMask, xF86XK_MonBrightnessUp) , spawn "xbacklight -inc 10")
-              , ((noModMask, xF86XK_MonBrightnessDown) , spawn "xbacklight -dec 10")
-              , ((noModMask, xF86XK_AudioMute) , spawn "amixer -D pulse set Master 1+ toggle")
-              , ((noModMask, xF86XK_AudioRaiseVolume) , spawn "amixer -D pulse sset Master 2%+")
-              , ((noModMask, xF86XK_AudioLowerVolume) , spawn "amixer -D pulse sset Master 2%-")
-              -- , ((noModMask, xK_Caps_Lock) , spawn "/usr/bin/setxkbmap -option caps:escape")
-              , ((mod4Mask .|. shiftMask, xK_l) , spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
-              ]
-              -- , ((mod4Mask , xK_i) , spawn "chromium-browser --app='https://skim.hipchat.com/chat'")
-              -- , ((mod4Mask , xK_s) , spawn "chromium-browser --app='https://skimlinks.slack.com'") ]
+    others = TwoPane (3/100) (1/2)  ||| Full ||| Grid
+
+--------------------------------------------------------------------------------
+-- | Customize the way 'XMonad.Prompt' looks and behaves.  It's a
+-- great replacement for dzen.
+myXPConfig = def
+  { position          = Top
+  , alwaysHighlight   = True
+  , promptBorderWidth = 0
+  , font              = "xft:monospace:size=9"
+  }
+
+--------------------------------------------------------------------------------
+-- | Manipulate windows as they are created.  The list given to
+-- @composeOne@ is processed from top to bottom.  The first matching
+-- rule wins.
+--
+-- Use the `xprop' tool to get the info you need for these matches.
+-- For className, use the second value that xprop gives you.
+myManageHook = composeOne
+  [ isDialog              -?> doCenterFloat
+
+    -- Move transient windows to their parent:
+  , transience
+  ]
