@@ -35,11 +35,12 @@ main = do
     , layoutHook = desktopLayoutModifiers $ myLayouts
     , borderWidth = 0
     , logHook    = dynamicLogString def >>= xmonadPropLog
+    , terminal    = "/home/richard/.local/bin/alacritty"
     }
 
     `additionalKeysP` -- Add some extra key bindings:
       [ ("M-S-q",   confirmPrompt myXPConfig "exit" (io exitSuccess))
-      , ("M-g",     spawn "google-chrome") 
+      , ("M-g",     spawn "/home/richard/.local/firefox/firefox") 
       , ("M-p",     spawn "dmenu_run") 
       , ("M-<Esc>", sendMessage (Toggle "Full"))
       , ("M-S-l", spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")

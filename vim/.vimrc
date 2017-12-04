@@ -138,7 +138,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 "Plugin 'othree/html5.vim'
 "Plugin 'wincent/command-t'
 "Plugin 'wincent/Command-T'
@@ -268,8 +268,10 @@ com! FormatJSON %!python -m json.tool
 " Disable haskell-vim omnifunc
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
+" let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 let g:ale_linters = {'haskell': ['stack-ghc-mod']}
+set lazyredraw
+set ttyfast
