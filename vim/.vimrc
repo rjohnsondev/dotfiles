@@ -130,7 +130,8 @@ Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'eagletmt/neco-ghc'
 "Plugin 'ervandew/supertab'
-" Plugin 'Shougo/deoplete.nvim'
+"Plugin 'Shougo/deoplete.nvim'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
 "Plugin 'junegunn/vim-easy-align'
@@ -159,6 +160,7 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'purescript-contrib/purescript-vim'
 Plugin 'FrigoEU/psc-ide-vim'
 Plugin 'elzr/vim-json'
+Plugin 'haya14busa/is.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
