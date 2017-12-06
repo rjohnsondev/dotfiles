@@ -8,6 +8,7 @@
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 ZSH_THEME="rjohnsondev"
+ZSH_THEME="rjohnsondev-dark"
 # ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
