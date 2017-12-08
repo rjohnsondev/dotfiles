@@ -114,7 +114,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
-Plugin 'flazz/vim-colorschemes'
+"Plugin 'flazz/vim-colorschemes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
@@ -136,7 +136,8 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'godlygeek/tabular'
 "Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'mustache/vim-mustache-handlebars'
 "Plugin 'Valloric/YouCompleteMe'
@@ -171,7 +172,9 @@ filetype plugin indent on    " required
 "if has("gui_running")
     "colorscheme github
     "colorscheme solarized
-    colorscheme desertEx
+    " colorscheme desertEx
+    set background=dark
+    colorscheme gruvbox
 "endif
 
 let g:rainbow_active=1
@@ -230,6 +233,7 @@ let g:clojure_align_subforms = 1
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='light'
+let g:airline_theme='gruvbox'
 
 let g:NERDTreeMinimalUI = 1
 
