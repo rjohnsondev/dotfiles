@@ -54,7 +54,8 @@ ZSH_THEME="rjohnsondev-dark"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions stack)
-plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions)
+#plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
@@ -103,9 +104,6 @@ autoload -U +X bashcompinit && bashcompinit
 export PATH="$PATH:$HOME/.cargo/bin"
 fpath+=~/.zfunc
 
-export NVM_DIR="/home/richard/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/richard/google-cloud-sdk/path.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -115,12 +113,9 @@ if [ -f /home/richard/google-cloud-sdk/completion.zsh.inc ]; then
 fi
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
-# export PATH=/home/richard/anaconda3/bin:$PATH
-if [ -f '/home/richard/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/completion.zsh.inc'; fi
-# export LESS="-XFR"
-#
+
 alias opsignin='eval $(op signin draftstars)'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
