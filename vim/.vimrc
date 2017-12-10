@@ -278,6 +278,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 set clipboard=unnamedplus
 
-let g:ale_linters = {'haskell': ['stack-ghc-mod']}
+" let g:ale_linters = {'haskell': ['stack-ghc-mod']}
+let g:ale_linters = {'haskell': ['hdevtools', 'hlint']}
 set lazyredraw
 set ttyfast
