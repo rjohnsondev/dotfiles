@@ -93,9 +93,9 @@ ZSH_AUTOSUGGEST_STRATEGY="match_prev_cmd"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GOROOT=/home/richard/go
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:~/apache-maven-3.5.0/bin
-export PATH=$PATH:~/.local/bin
+export PATH=$GOROOT/bin:$PATH
+export PATH=~/apache-maven-3.5.0/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
