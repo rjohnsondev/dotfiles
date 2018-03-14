@@ -197,7 +197,7 @@ autocmd FileType sql nmap <C-ENTER> :%DBExecRangeSQL<CR>
 autocmd FileType sql nmap <ENTER> :DBExecSQLUnderCursor<CR>
 autocmd FileType sql vmap <ENTER> :DBExecRangeSQL<CR>
 
-let g:haskell_multiline_strings = 1
+let g:haskell_multiline_strings = 0
 
 let g:golang_goroot = "/home/richard/go/"
 
