@@ -40,7 +40,8 @@ main = do
 
     `additionalKeysP` -- Add some extra key bindings:
       [ ("M-S-q",   confirmPrompt myXPConfig "exit" (io exitSuccess))
-      , ("M-g",     spawn "/home/richard/.local/firefox/firefox") 
+      -- , ("M-g",     spawn "/home/richard/.local/firefox/firefox") 
+      , ("M-g",     spawn "/usr/bin/google-chrome") 
       , ("M-p",     spawn "dmenu_run") 
       , ("M-<Esc>", sendMessage (Toggle "Full"))
       , ("M-S-l", spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
