@@ -93,9 +93,9 @@ ZSH_AUTOSUGGEST_STRATEGY="match_prev_cmd"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GOROOT=/home/richard/go
-export PATH=$PATH:$GOROOT/bin
-export PATH=$PATH:~/apache-maven-3.5.0/bin
-export PATH=$PATH:~/.local/bin
+export PATH=$GOROOT/bin:$PATH
+export PATH=~/apache-maven-3.5.0/bin:$PATH
+export PATH=~/.local/bin:$PATH
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -103,14 +103,6 @@ autoload -U +X bashcompinit && bashcompinit
 
 export PATH="$PATH:$HOME/.cargo/bin"
 fpath+=~/.zfunc
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/richard/google-cloud-sdk/path.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f /home/richard/google-cloud-sdk/completion.zsh.inc ]; then
-  source '/home/richard/google-cloud-sdk/completion.zsh.inc'
-fi
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
 
@@ -119,3 +111,9 @@ alias opsignin='eval $(op signin draftstars)'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/richard/google-cloud-sdk/path.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/richard/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/richard/google-cloud-sdk/completion.zsh.inc'; fi

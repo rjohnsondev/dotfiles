@@ -10,5 +10,10 @@ fi
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
 xsetroot -cursor_name left_ptr
+synclient VertScrollDelta=-27
+synclient HorizScrollDelta=-27
+(sleep 2; xrandr --dpi 130)
+export GDK_SCALE=1.3
+
 
 # amixer -c 0 cset 'numid=10' 1

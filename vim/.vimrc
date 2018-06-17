@@ -114,7 +114,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'
 Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-clojure-static'
-"Plugin 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 "Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive'
@@ -170,11 +170,11 @@ filetype plugin indent on    " required
 " Bundle customisations
 "
 "if has("gui_running")
-    "colorscheme github
+    colorscheme github
     "colorscheme solarized
     " colorscheme desertEx
-    set background=dark
-    colorscheme gruvbox
+    "set background=dark
+    "colorscheme gruvbox
 "endif
 
 let g:rainbow_active=1
