@@ -35,7 +35,7 @@ main = do
     , layoutHook = desktopLayoutModifiers $ myLayouts
     , borderWidth = 0
     , logHook    = dynamicLogString def >>= xmonadPropLog
-    , terminal    = "/home/richard/.local/bin/alacritty"
+    , terminal    = "/home/richard/.cargo/bin/alacritty"
     }
 
     `additionalKeysP` -- Add some extra key bindings:

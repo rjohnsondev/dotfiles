@@ -1,6 +1,7 @@
-if [ -f /usr/bin/xcompmgr ]
+if [ -f /usr/bin/compton ]
     then
-        /usr/bin/xcompmgr -n &
+        # compton --backend glx --glx-no-stencil --glx-swap-method exchange -b
+        compton --backend glx --glx-no-stencil -b
 fi
 
 # unity-settings-daemon &
@@ -9,6 +10,7 @@ fi
 # (sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
+(sleep 3; sudo modprobe msr; cd /home/richard/Documents/ZenStates-Linux; sudo python zenstates.py --c6-disable)
 xsetroot -cursor_name left_ptr
 
 # amixer -c 0 cset 'numid=10' 1
