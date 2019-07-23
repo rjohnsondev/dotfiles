@@ -1,0 +1,8 @@
+set clipboard+=unnamed
+
+" case insensitive searching...
+set ignorecase
+set smartcase
+
+" Use incremental searching
+set incsearch

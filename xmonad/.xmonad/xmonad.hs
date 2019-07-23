@@ -35,7 +35,7 @@ main = do
     , layoutHook = desktopLayoutModifiers $ myLayouts
     , borderWidth = 0
     , logHook    = dynamicLogString def >>= xmonadPropLog
-    , terminal    = "/home/richard/.cargo/bin/alacritty"
+    , terminal    = "WINIT_HIDPI_FACTOR=1.0 /home/richard/.cargo/bin/alacritty"
     }
 
     `additionalKeysP` -- Add some extra key bindings:
