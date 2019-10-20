@@ -108,7 +108,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'scrooloose/nerdtree'
-Plugin 'rjohnsondev/vim-compiler-go'
+"Plugin 'rjohnsondev/vim-compiler-go'
 Plugin 'luochen1990/rainbow'
 Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'

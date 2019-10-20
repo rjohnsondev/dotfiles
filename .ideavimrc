@@ -6,3 +6,4 @@ set smartcase
 
 " Use incremental searching
 set incsearch
+vmap = <ESC>:action AutoIndentLines<CR>
