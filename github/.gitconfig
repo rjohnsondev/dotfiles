@@ -7,3 +7,5 @@
 	ui = true
 [alias]
     lg = log --decorate=short --graph --pretty=oneline --abbrev-commit --date=relative
+[core]
+	editor = vim

@@ -7,6 +7,7 @@ fi
 # unity-settings-daemon &
 # feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
 # feh --bg-scale ~/Pictures/n7P9k.jpg
+feh --bg-scale ~/Pictures/1142710-gorgerous-cool-cat-wallpapers-2560x1600-4k.jpg &
 # (sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &

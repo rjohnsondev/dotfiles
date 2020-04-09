@@ -55,7 +55,7 @@ ZSH_THEME="rjohnsondev-dark"
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions stack)
 #plugins=(git vi-mode virtualenv virtualenvwrapper zsh-syntax-highlighting zsh-autosuggestions)
-plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions virtualenvwrapper)
+plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions virtualenvwrapper rbenv)
 
 # User configuration
 
