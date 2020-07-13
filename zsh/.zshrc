@@ -107,6 +107,7 @@ fpath+=~/.zfunc
 
 export GOROOT=/home/richard/go
 export PATH=$PATH:$GOROOT/bin
+export PATH=/home/richard/Documents/webrtc-dev/depot_tools:$PATH
 
 alias opsignin='eval $(op signin draftstars)'
 
