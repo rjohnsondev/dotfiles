@@ -1,17 +1,19 @@
 if [ -f /usr/bin/compton ]
     then
         # compton --backend glx --glx-no-stencil --glx-swap-method exchange -b
-        compton --backend glx --glx-no-stencil -b
+        # compton --backend glx --glx-no-stencil -b
+        compton --backend glx --glx-no-stencil &
 fi
 
 # unity-settings-daemon &
 # feh --bg-scale ~/Pictures/siamese\ cat\ wallpaper39386.jpg &
 # feh --bg-scale ~/Pictures/n7P9k.jpg
-feh --bg-scale ~/Pictures/1142710-gorgerous-cool-cat-wallpapers-2560x1600-4k.jpg &
+# feh --bg-scale ~/Pictures/1142710-gorgerous-cool-cat-wallpapers-2560x1600-4k.jpg &
+feh --bg-scale ~/Pictures/cat.jpg &
 # (sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
-(sleep 3; sudo modprobe msr; cd /home/richard/Documents/ZenStates-Linux; sudo python zenstates.py --c6-disable)
+# (sleep 3; sudo modprobe msr; cd /home/richard/Documents/ZenStates-Linux; sudo python zenstates.py --c6-disable)
 xsetroot -cursor_name left_ptr
 
 # amixer -c 0 cset 'numid=10' 1

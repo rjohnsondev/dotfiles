@@ -9,6 +9,7 @@ module Main (main) where
 import System.Exit
 import XMonad
 import XMonad.Config.Desktop
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.BinarySpacePartition (emptyBSP)
@@ -29,7 +30,7 @@ main = do
 
   -- Start xmonad using the main desktop configuration with a few
   -- simple overrides:
-  xmonad $ desktopConfig
+  xmonad $ ewmh $ desktopConfig
     { modMask    = mod4Mask -- Use the "Win" key for the mod key
     , manageHook = myManageHook <+> manageHook desktopConfig
     , layoutHook = desktopLayoutModifiers $ myLayouts
@@ -77,7 +78,7 @@ myXPConfig = def
 -- For className, use the second value that xprop gives you.
 myManageHook = composeOne
   [ isDialog              -?> doCenterFloat
-
+  , className =? "Microsoft Teams - Preview" -?> doFloat
     -- Move transient windows to their parent:
   , transience
   ]
