@@ -1,4 +1,5 @@
-geometry 10x1-250-4
+geometry 10x1-250-2
 background "#000000"
-icon_size 16
+icon_size 20
+slot_size 20
 icon_gravity E

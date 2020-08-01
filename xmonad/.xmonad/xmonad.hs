@@ -22,6 +22,7 @@ import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig
 import XMonad.Layout.TwoPane
 import XMonad.Layout.Grid
+import XMonad.StackSet
 
 
 --------------------------------------------------------------------------------
@@ -42,9 +43,9 @@ main = do
 
     `additionalKeysP` -- Add some extra key bindings:
       [ ("M-S-q",   confirmPrompt myXPConfig "exit" (io exitSuccess))
-      -- , ("M-g",     spawn "/home/richard/.local/firefox/firefox") 
-      , ("M-g",     spawn "/usr/bin/google-chrome") 
-      , ("M-p",     spawn "dmenu_run") 
+      -- , ("M-g",     spawn "/home/richard/.local/firefox/firefox")
+      , ("M-g",     spawn "/usr/bin/google-chrome")
+      , ("M-p",     spawn "dmenu_run")
       , ("M-<Esc>", sendMessage (Toggle "Full"))
       , ("M-S-l", spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
       ]
@@ -79,7 +80,8 @@ myXPConfig = def
 -- For className, use the second value that xprop gives you.
 myManageHook = composeOne
   [ isDialog              -?> doCenterFloat
-  , className =? "Microsoft Teams - Preview" -?> doFloat
+  , title =? "Microsoft Teams Notification" -?> doFloat <+> doF focusDown
+  -- , title =? "Microsoft Teams Notification" -?> doIgnore
     -- Move transient windows to their parent:
   , transience
   ]
