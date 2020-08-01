@@ -27,6 +27,7 @@ import XMonad.Layout.Grid
 --------------------------------------------------------------------------------
 main = do
   spawn "/usr/bin/xmobar /home/richard/.xmonad/xmobar.config" -- Start a task bar such as xmobar.
+  spawn "stalonetray" -- Start a task bar such as xmobar.
 
   -- Start xmonad using the main desktop configuration with a few
   -- simple overrides:
