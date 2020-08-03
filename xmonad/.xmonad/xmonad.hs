@@ -23,6 +23,7 @@ import XMonad.Util.EZConfig
 import XMonad.Layout.TwoPane
 import XMonad.Layout.Grid
 import XMonad.StackSet
+import XMonad.Hooks.Place
 
 
 --------------------------------------------------------------------------------
