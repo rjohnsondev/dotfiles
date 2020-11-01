@@ -1,8 +1,6 @@
-if [ -f /usr/bin/compton ]
+if [ -f ~/.local/bin/picom ]
     then
-        # compton --backend glx --glx-no-stencil --glx-swap-method exchange -b
-        # compton --backend glx --glx-no-stencil -b
-        compton --backend glx --glx-no-stencil &
+        picom --config ~/picom.conf --experimental-backends &
 fi
 
 # unity-settings-daemon &
@@ -13,6 +11,11 @@ feh --bg-scale ~/Pictures/cat.jpg &
 # (sleep 3; xmobar ~/.xmonad/xmobar.config) &
 (sleep 3; xset dpms 300 300 300) &
 (sleep 3; /usr/bin/setxkbmap -option caps:escape) &
+# (sleep 2; 
+#     pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_Evolve_75_745C4B60570B020A00-00.analog-stereo' &&
+#     pacmd set-default-source 'alsa_input.usb-046d_C922_Pro_Stream_Webcam_F447941F-02.analog-stereo')
+
+
 # (sleep 3; sudo modprobe msr; cd /home/richard/Documents/ZenStates-Linux; sudo python zenstates.py --c6-disable)
 xsetroot -cursor_name left_ptr
 

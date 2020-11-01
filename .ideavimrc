@@ -7,3 +7,6 @@ set smartcase
 " Use incremental searching
 set incsearch
 vmap = <ESC>:action AutoIndentLines<CR>
+
+" highlight the copied text
+set highlightedyank

@@ -24,6 +24,7 @@ import XMonad.Layout.TwoPane
 import XMonad.Layout.Grid
 import XMonad.StackSet
 import XMonad.Hooks.Place
+import XMonad.Actions.CopyWindow
 
 
 --------------------------------------------------------------------------------
@@ -48,7 +49,19 @@ main = do
       , ("M-g",     spawn "/usr/bin/google-chrome")
       , ("M-p",     spawn "dmenu_run")
       , ("M-<Esc>", sendMessage (Toggle "Full"))
+      , ("M-n", windows copyToAll)
+      , ("M-S-n", killAllOtherCopies)
       , ("M-S-l", spawn "gnome-screensaver-command -l; sleep 3; xset dpms force off")
+      , ("M-<Up>", spawn "amixer -D pulse sset Master 2%+")
+      , ("M-<Down>", spawn "amixer -D pulse sset Master 2%-")
+      , ("M-<F9>", spawn "pacmd set-default-sink 'alsa_output.usb-GuangZhou_FiiO_Electronics_Co._Ltd_FiiO_K5_Pro-00.analog-stereo'" >>
+                   spawn "pacmd set-default-source 'alsa_input.usb-046d_C922_Pro_Stream_Webcam_F447941F-02.analog-stereo'")
+      , ("M-<F10>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_Evolve_75_745C4B60570B022000-00.analog-stereo'" >>
+                    spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_Evolve_75_745C4B60570B022000-00.mono-fallback'")
+      , ("M-<F11>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_Link_370_745C4BE664A2015200-00.analog-stereo'" >>
+                    spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_Link_370_745C4BE664A2015200-00.mono-fallback'")
+      , ("M-<F12>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_501AA5A13912021F00-00.analog-stereo'" >>
+                    spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_SPEAK_510_USB_501AA5A13912021F00-00.mono-fallback'")
       ]
 
 --------------------------------------------------------------------------------

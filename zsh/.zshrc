@@ -95,10 +95,11 @@ KEYTIMEOUT=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export GOROOT=/home/richard/go
+export GOPATH=/home/richard/Documents/gopath
 export PATH=$GOROOT/bin:$PATH
 export PATH=~/apache-maven-3.6.1/bin:$PATH
 export PATH=~/.local/bin:$PATH
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
