@@ -25,6 +25,7 @@ import XMonad.Layout.Grid
 import XMonad.StackSet
 import XMonad.Hooks.Place
 import XMonad.Actions.CopyWindow
+import XMonad.Layout.ThreeColumns
 
 
 --------------------------------------------------------------------------------
@@ -47,7 +48,7 @@ main = do
       [ ("M-S-q",   confirmPrompt myXPConfig "exit" (io exitSuccess))
       -- , ("M-g",     spawn "/home/richard/.local/firefox/firefox")
       , ("M-g",     spawn "/usr/bin/google-chrome")
-      , ("M-p",     spawn "dmenu_run")
+      , ("M-p",     spawn "dmenu_run -fn 'Hack-12'")
       , ("M-<Esc>", sendMessage (Toggle "Full"))
       , ("M-n", windows copyToAll)
       , ("M-S-n", killAllOtherCopies)
@@ -59,9 +60,9 @@ main = do
       , ("M-<F10>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_Evolve_75_745C4B60570B022000-00.analog-stereo'" >>
                     spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_Evolve_75_745C4B60570B022000-00.mono-fallback'")
       , ("M-<F11>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_Link_370_745C4BE664A2015200-00.analog-stereo'" >>
-                    spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_Link_370_745C4BE664A2015200-00.mono-fallback'")
-      , ("M-<F12>", spawn "pacmd set-default-sink 'alsa_output.usb-0b0e_Jabra_SPEAK_510_USB_501AA5A13912021F00-00.analog-stereo'" >>
-                    spawn "pacmd set-default-source 'alsa_input.usb-0b0e_Jabra_SPEAK_510_USB_501AA5A13912021F00-00.mono-fallback'")
+                    spawn "pacmd set-default-source 'alsa_output.usb-0b0e_Jabra_Link_370_745C4BE664A2015200-00.analog-stereo.monitor'")
+      , ("M-<F12>", spawn "pacmd set-default-sink 'alsa_output.pci-0000_28_00.1.hdmi-stereo-extra4'" >>
+                    spawn "pacmd set-default-source 'alsa_input.usb-046d_C922_Pro_Stream_Webcam_F447941F-02.analog-stereo'")
       ]
 
 --------------------------------------------------------------------------------
@@ -73,7 +74,8 @@ main = do
 -- full screen layout.
 myLayouts = toggleLayouts (noBorders Full) others
   where
-    others = TwoPane (3/100) (1/2)  ||| Full ||| Grid
+    -- others = TwoPane (3/100) (1/2)  ||| Full ||| ThreeColMid 1 (3/100) (1/2) ||| Grid
+    others = Full |||  ThreeColMid 1 (3/100) (4/10)
 
 --------------------------------------------------------------------------------
 -- | Customize the way 'XMonad.Prompt' looks and behaves.  It's a
